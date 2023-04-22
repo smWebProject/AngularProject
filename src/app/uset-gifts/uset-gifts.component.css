@@ -1,0 +1,13 @@
+#selectedGIfts{
+    margin-left: 50%;
+    background-color:  hsla(13, 75%, 89%, 0.874);
+    text-align: center;
+    color: rgb(8, 8, 8);
+    width: 500px;
+    font-size: x-large;
+    font-style: italic;
+    
+}
+.titles{
+    font-size: xx-large;
+}

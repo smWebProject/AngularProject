@@ -1,0 +1,51 @@
+<div>
+    <p id="title">Gifts List</p>
+
+    <table>
+        <tr>
+            <th>name</th>
+            <th>code</th>
+            <th>donator</th>
+            <th>price</th>
+            <th>options</th>
+        </tr>
+        <tr *ngFor="let k of giftSrv.giftsArray | async">
+            <td>{{k.name}}</td>
+            <td>{{k.code}}</td>
+            <td>{{k.donator}}</td>
+            <td>{{k.price}}</td>
+            <button routerLink="updategift/{{k.code}}" >update</button>
+            <button (click)="delete(k.code)" >delete</button>
+            <router-outlet></router-outlet>
+        </tr>
+    </table>
+
+    <button class="enterBtn" (click)="addGift()">add gift</button>
+    <add-gift *ngIf="flag"></add-gift>
+</div>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="../../maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Justified Button Groups</h2>
+  <p>To span the entire width of the screen, use the .btn-group-justified class:</p>
+  <div class="btn-group btn-group-justified">
+    <a href="#" class="btn btn-primary">Apple</a>
+    <a href="#" class="btn btn-primary">Samsung</a>
+    <a href="#" class="btn btn-primary">Sony</a>
+  </div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/bootstrap/tryit.asp?filename=trybs_button_group_justified&stacked=h by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Jul 2019 13:07:12 GMT -->
+<!-- </html> -->

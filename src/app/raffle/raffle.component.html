@@ -1,0 +1,13 @@
+
+<button (click)="ruffle()" [disabled]="ruffleFlag==true" class="enterBtn">start ruffle</button>
+<br/>
+<table>
+<tr>
+    <th>gift</th>
+    <th>winner</th>
+</tr>
+<tr *ngFor="let w of winners">
+    <td>{{w.gift}}</td>
+    <td>{{w.winner}}</td>
+</tr>
+</table>

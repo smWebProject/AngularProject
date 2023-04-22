@@ -1,0 +1,11 @@
+<div>
+    <label class="titles">enter manager password</label>
+    <br/>
+    <input [(ngModel)]="password" type="password" id="password" />
+</div>
+<div *ngIf="password==managerPassword">
+    <button routerLink="gifts" class="enterBtn">gifts</button>
+    <button (click)="donator()" class="enterBtn">donators</button>
+    <button (click)="ruffle()" class="enterBtn" >ruffle</button>
+</div>
+<router-outlet></router-outlet>

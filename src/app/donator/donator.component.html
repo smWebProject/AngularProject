@@ -1,0 +1,54 @@
+<!-- <kendo-grid [data]="donatorSrv.donatorsArray" >
+    <kendo-grid-column field="code" title="code" editor="numeric"></kendo-grid-column>
+    <kendo-grid-column field="name" title="name" editor="text"></kendo-grid-column>
+    <kendo-grid-column field="phone" title="phone" editor="numeric"></kendo-grid-column>
+    <kendo-grid-column field="adress" title="adress" editor="text"></kendo-grid-column>
+        <!-- <ng-template kendoGridCellTemplate>
+            <button kendoGridEditCommand>details</button>
+        </ng-template>
+   -->
+<!-- </kendo-grid>  -->
+<div>
+    <p id="title">Donators List</p>
+
+    <table>
+        <tr>
+            <th>code</th>
+            <th>name</th>
+            <th>phone</th>
+            <th>adress</th>
+            <th>gifts</th>
+            <th>options</th>
+
+        </tr>
+        <tr *ngFor="let k of donatorSrv.donatorsArray | async">
+            <td>{{k.code}}</td>
+            <td>{{k.name}}</td>
+            <td>{{k.phone}}</td>
+            <td>{{k.adress}}</td>
+            <select><option *ngFor="let g of k.gifts"><td>{{g.name}}</td></option></select>
+            <button (click)="updateDonator(k.code)">update</button>
+            <button (click)="delete(k.code)">delete</button>
+            <router-outlet></router-outlet>
+        </tr>
+    </table>
+
+    <button class="enterBtn" (click)="addDonator()" >add donator</button>
+
+    <form *ngIf="flag" [formGroup]="frmDonator" (ngSubmit)="saveForm()">
+        <span *ngIf="frmDonator.controls['code'].touched && frmDonator.controls['code'].invalid">code is not valid!</span>
+        <input id="firstInput" class="inputs" type="string" formControlName="code" />
+        <label>enter code</label>
+        <span *ngIf="frmDonator.controls['name'].touched && frmDonator.controls['name'].invalid">name is not valid!</span>
+        <input class="inputs" type="string" formControlName="name" />
+        <label>enter name</label>
+        <span *ngIf="frmDonator.controls['phone'].touched && frmDonator.controls['phone'].invalid">error in phone!</span>
+        <input class="inputs" type="text" formControlName="phone" />
+        <label>enter phone</label>
+        <input class="inputs" type="text" formControlName="adress" />
+        <label>enter adress</label>
+
+        <br />
+        <button type="submit" [disabled]="frmDonator.invalid">save donator</button>
+    </form>
+</div>

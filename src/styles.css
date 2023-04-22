@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url(src\app\images\background.png);
+    background-size: 100%;
+}
+
+table {
+    margin-left: 600px;
+    font-size: xx-large;
+    font-style: italic;
+    text-align: center;
+}
+
+tr {
+    background-color: hsla(13, 75%, 89%, 0.874);
+}
+
+#title {
+    font-style: italic;
+    color: rgb(220, 202, 83);
+    font-size: 70px;
+    text-align: center;
+}
+
+input {
+    border-radius: 8px;
+    height: 50px;
+    width: 270px;
+}
+
+form {
+    text-align: center;
+}
+
+.enterBtn {
+    width: 200px;
+    height: 50px;
+    background-color: rgb(245, 212, 198);
+    border-radius: 8px;
+    font-size: 30px;
+}
+

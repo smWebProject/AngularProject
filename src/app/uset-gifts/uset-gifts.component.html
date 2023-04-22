@@ -1,0 +1,34 @@
+<div>
+    <p id="title">Gifts List</p>
+    <div>
+        <table>
+            <tr>
+                <th>name</th>
+                <th>code</th>
+                <th>price</th>
+                <th>options</th>
+            </tr>
+            <tr *ngFor="let k of giftSrv.giftsArray | async">
+                <td>{{k.name}}</td>
+                <td>{{k.code}}</td>
+                <td>{{k.price}}</td>
+                <button (click)="choose(k)">select <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                        <path
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                    </svg></button>
+                <button (click)="delete(k)">delete</button>
+            </tr>
+        </table>
+    </div>
+    <div id="selectedGIfts">
+        <p class="titles">Selected Gifts</p>
+        <span *ngFor="let g of giftSrv.giftsForUser" >
+            <li>{{g.name}}</li>
+        </span>
+        <br/>
+        <p class="titles">your payment until now is: {{payment}}</p>
+        <button routerLink="checkout" class="enterBtn">pay</button>
+    </div>
+    <router-outlet></router-outlet>
+</div>

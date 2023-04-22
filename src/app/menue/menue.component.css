@@ -1,0 +1,13 @@
+#salesGiftsNumber{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    color: darksalmon
+}
+.menuBtn {
+    width: 300px;
+    height: 50px;
+    background-color: rgb(245, 212, 198);
+    border-radius: 8px;
+    font-size: 30px;
+    margin-right:500px;
+}

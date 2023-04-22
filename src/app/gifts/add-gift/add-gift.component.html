@@ -1,0 +1,17 @@
+<p>enter gift's details</p>
+<form [formGroup]="frmGift" (ngSubmit)="saveForm()">
+    <span *ngIf="frmGift.controls['name'].touched && frmGift.controls['name'].invalid">error in name!</span>
+    <input id="firstInput" class="inputs" type="string" formControlName="code" />
+    <label>enter code</label>
+    <input class="inputs" type="string" formControlName="name" />
+    <label>enter name</label>
+    <span *ngIf="frmGift.controls['donator'].touched && frmGift.controls['donator'].invalid">error in donator!</span>
+    <select class="inputs" formControlName="donator">
+        <option *ngFor="let d of donatorSrv.donatorsArray | async" >{{d.name}}</option>
+    </select>
+    <label>enter donator</label>
+    <input class="inputs" type="number" formControlName="price" />
+    <label>enter price</label>
+    <br />
+    <button type="submit" [disabled]="frmGift.invalid" class="enterBtn">save gift</button>
+</form>

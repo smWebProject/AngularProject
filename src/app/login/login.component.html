@@ -1,0 +1,14 @@
+<div >
+    <form [formGroup]="frmUser" (ngSubmit)="saveForm()">
+        <input formControlName="name" type="string" placeholder="enter name" />
+        <br/>
+        <br/>
+        <input formControlName="phone" type="number" placeholder="enter phone" />
+        <br/>
+        <br/>
+        <input formControlName="email" type="string" placeholder="@enter email" />
+        <br/>
+        <br/>
+        <button type="submit" [disabled]="frmUser.invalid" class="enterBtn">start</button>
+    </form>
+</div>
